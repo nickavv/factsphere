@@ -3,34 +3,34 @@
 #
 
 facts=(
-    'The Fact Sphere is the most handsome sphere.'
-    'The Fact Sphere is the most intelligent sphere.'
-    'Cellular phones will not give you cancer. Only hepatitis.'
-O    "Dreams are the subconscious mind's way of reminding people 
+'The Fact Sphere is the most handsome sphere.'
+'The Fact Sphere is the most intelligent sphere.'
+'Cellular phones will not give you cancer. Only hepatitis.'
+"Dreams are the subconscious mind's way of reminding people
 to go to school naked and have their teeth fall out."
-    "Edmund Hillary, the first person to climb Mount Everest, 
+"Edmund Hillary, the first person to climb Mount Everest, 
 did so accidentally while chasing a bird."
-"In 1948, at the request of a dying boy, baseball legend Babe Ruth 
+"In 1948, at the request of a dying boy, baseball legend Babe Ruth
 ate seventy-five hot dogs, then died of hot dog poisoning."
-"William Shakespeare did not exist. His plays were masterminded in 
-1589 by Francis Bacon, who used a Ouija board to enslave play-writing 
+"William Shakespeare did not exist. His plays were masterminded in
+1589 by Francis Bacon, who used a Ouija board to enslave play-writing
 ghosts."
-"The automobile brake was not invented until 1895. Before this, 
-someone had to remain in the car at all times, driving in circles 
+"The automobile brake was not invented until 1895. Before this,
+someone had to remain in the car at all times, driving in circles
 until passengers returned from their errands."
-"In Greek myth, the craftsman Daedalus invented human flight so a 
+"In Greek myth, the craftsman Daedalus invented human flight so a
 group of Minotaurs would stop teasing him about it."
 "You could stand to lose a few pounds."
-"Diamonds are made when coal is put under intense presures. 
-Diamonds put under intense pressure become foam pellets, 
+"Diamonds are made when coal is put under intense presures.
+Diamonds put under intense pressure become foam pellets,
 commonly used today as packing material."
 "To make a photocopier, simply photocopy a mirror."
 "The square root of rope is string."
 "89% of magic tricks are not magic. Technically, they are sorcery."
 "At some point in their lives 1 in 6 children will be abducted by
 the Dutch."
-"In 1862, Abraham Lincoln signed the Emancipation Proclamation, 
-freeing the slaves. Like everything he did, Lincoln freed the slaves 
+"In 1862, Abraham Lincoln signed the Emancipation Proclamation,
+freeing the slaves. Like everything he did, Lincoln freed the slaves
 while sleepwalking, and later had no memory of the event."
 "You will be dead soon"
 "The first commercial airline flight took to the air in 1914. Everyone
@@ -67,7 +67,7 @@ sphere='   V
  \      |      \__/
    --___|___--- /
    | -------- |
-   --=======--    
+   --=======--
 '
 
 factIndex=$(( RANDOM % ${#facts[@]} ))
