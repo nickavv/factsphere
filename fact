@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+#
+
+facts=(
+    'The Fact Sphere is the most handsome sphere.'
+    'The Fact Sphere is the most intelligent sphere.'
+    'Cellular phones will not give you cancer. Only hepatitis.'
+O    "Dreams are the subconscious mind's way of reminding people 
+to go to school naked and have their teeth fall out."
+    "Edmund Hillary, the first person to climb Mount Everest, 
+did so accidentally while chasing a bird."
+"In 1948, at the request of a dying boy, baseball legend Babe Ruth 
+ate seventy-five hot dogs, then died of hot dog poisoning."
+"William Shakespeare did not exist. His plays were masterminded in 
+1589 by Francis Bacon, who used a Ouija board to enslave play-writing 
+ghosts."
+"The automobile brake was not invented until 1895. Before this, 
+someone had to remain in the car at all times, driving in circles 
+until passengers returned from their errands."
+"In Greek myth, the craftsman Daedalus invented human flight so a 
+group of Minotaurs would stop teasing him about it."
+"You could stand to lose a few pounds."
+"Diamonds are made when coal is put under intense presures. 
+Diamonds put under intense pressure become foam pellets, 
+commonly used today as packing material."
+"To make a photocopier, simply photocopy a mirror."
+"The square root of rope is string."
+"89% of magic tricks are not magic. Technically, they are sorcery."
+"At some point in their lives 1 in 6 children will be abducted by
+the Dutch."
+"In 1862, Abraham Lincoln signed the Emancipation Proclamation, 
+freeing the slaves. Like everything he did, Lincoln freed the slaves 
+while sleepwalking, and later had no memory of the event."
+"You will be dead soon"
+"The first commercial airline flight took to the air in 1914. Everyone
+involved screamed the entire way."
+"Halley's Comet can be viewed orbiting Earth every seventy-six years.
+For the other seventy-five, it retreats to the heart of the sun where
+it hibernates undisturbed."
+"Before the Wright Brothers invented the airplane, anyone wanting to
+fly anywhere was required to eat 200 pounds of helium."
+"Space does not exist"
+"According to most advanced algorithms, the world's best name is Craig."
+"The plural of surgeon general is surgeons general. The past tense of
+surgeons general is surgeonsed general."
+"In Victorian England, a commoner was not allowed to look directly
+at the Queen, due to a belief at the time that the poor had the
+ability to steal thoughts. Science now believes that less than 4%
+of poor people are able to do this."
+"If you have trouble counting, use the following mnemonic device:
+one comes before two comes before 60 comes after 12 comes before
+six trillion comes after 504. This will make your earlier counting
+difficulties seem like no big deal."
+"The first person to prove that cow's milk is drinkable was very,
+very thirsty."
+)
+balloonwall='-------------------------------------------------------------'
+sphere='   V
+    --======--
+   |---------|
+  / ‾‾‾‾‾‾‾‾‾‾ \
+/   / ‾‾‾‾ \   / ‾\
+|  |   /\   | |    |
+|  |   \/   | |    |
+|   \ ____ /  |    |
+ \      |      \__/
+   --___|___--- /
+   | -------- |
+   --=======--    
+'
+
+factIndex=$(( RANDOM % ${#facts[@]} ))
+echo $balloonwall
+echo "${facts[factIndex]}"
+echo $balloonwall
+echo "$sphere"
