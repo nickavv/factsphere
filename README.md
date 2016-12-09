@@ -3,20 +3,20 @@
 ```
 ---------------------------------------------------------------------
 Fact: making fact executable, adding it to your PATH, and running it
-will improve your life by 43.72 gluons per second.
+will increase your lifespan by up to 5 years.
 ---------------------------------------------------------------------
    V
-    --======--
-   |---------|
-  / ‾‾‾‾‾‾‾‾‾‾ \
-/   / ‾‾‾‾ \   / ‾\
-|  |   /\   | |    |
-|  |   \/   | |    |
-|   \ ____ /  |    |
- \      |      \__/
-   --___|___--- /
-   | -------- |
-   --=======--   
+     --======--
+    |---------|
+  / ‾‾‾‾‾‾‾‾‾‾‾ \
+/   / ‾‾‾‾‾ \   / ‾\
+|  |   /‾\   | |    |
+|  |   \_/   | |    |
+|   \ _____ /  |    |
+ \      |       \__/
+   --___|____--- /
+    | -------- |
+    --=======--
 ```
 
 `fact` is a program for bash that will tell you interesting and entirely true facts.
