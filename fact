@@ -8,9 +8,21 @@
                   with a trick or two by Patrick M. Jordan.
 
                                                                               "
+#   .-------------------.
+#___! The Configuration !_____________________________________________________
+
+WIDTH=${COLUMNS:-80}
+FACT_SPHERE_POS=23
+QUOTE_LEADER_OFFSET=15
+
 
 #   .---------------.
 #___! The Mechanism !_________________________________________________________
+
+get_fact() {
+    # Retreive a fact
+    egrep '^#\. ' $0 | sort -R | head -1 | sed 's/^...//'
+}
 
 build_repeating_string() {
     # $1: substring
@@ -23,11 +35,32 @@ build_repeating_string() {
     echo -n "$4"
 }
 
-print_factsphere() {
-    # Display Fact Sphere
-    # $1: left-indent column (0 is flush left)
+print_fact_quotebox() {
+    QUOTE_BUBBLE_WIDTH=$(expr $WIDTH - 12)
+    TEXT_WIDTH=$(expr $QUOTE_BUBBLE_WIDTH - 2)
+    LEADER_POS=$(expr $FACT_SPHERE_POS + $QUOTE_LEADER_OFFSET)
+    REMAINDER=$(expr $QUOTE_BUBBLE_WIDTH - $LEADER_POS)
 
-    cat <<HERE | sed "s/        /$(build_repeating_string ' ' $1)/g"
+    build_repeating_string '-' $QUOTE_BUBBLE_WIDTH ' .' '.'
+    echo
+
+    get_fact \
+    | fmt -w $TEXT_WIDTH \
+    | awk "{printf \" | %-${TEXT_WIDTH}s |\\n\", \$0}"
+
+    #build_repeating_string '-' $(expr $LEADER_POS - 2) ' `' "| /"
+    build_repeating_string '-' $(expr $LEADER_POS - 2) ' `' ". ,"
+    build_repeating_string '-' $(expr $REMAINDER - 1) '' "'"
+    echo
+    build_repeating_string ' ' $LEADER_POS '' "|/"
+    echo
+    build_repeating_string ' ' $LEADER_POS '' "'"
+    echo
+}
+
+print_factsphere() {
+    INDENT_STRING=$(build_repeating_string ' ' $FACT_SPHERE_POS)
+    cat <<HERE | sed "s/        /$INDENT_STRING/g"
             --======--
             |---------|
           / ‾‾‾‾‾‾‾‾‾‾‾ \\
@@ -42,33 +75,13 @@ print_factsphere() {
 HERE
 }
 
-get_fact() {
-    # Retreive a fact
-    egrep '^#\. ' $0 | sort -R | head -1 | sed 's/^...//'
-}
-
-print_fact_quotebox() {
-    build_repeating_string '-' 68 ' .' '.'
-    echo
-
-    get_fact | fmt -w68 | awk '{printf " | %-66s |\n", $0 }'
-
-    build_repeating_string '-' 37 ' `' "| /"
-    build_repeating_string '-' 28 '' "'"
-    echo
-    build_repeating_string ' ' 39 '' "|/"
-    echo
-    build_repeating_string ' ' 39 '' "'"
-    echo
-}
-
 
 #   .-------------.
 #___! The Program !___________________________________________________________
 
 echo
 print_fact_quotebox
-print_factsphere 23
+print_factsphere
 echo
 
 
