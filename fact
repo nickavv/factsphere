@@ -31,7 +31,7 @@ build_repeating_string() {
     # $4: suffix
 
     echo -n "$3"
-    seq $2 | xargs -i_ echo -n "$1"
+    seq $2 | xargs -I_ echo -n "$1"
     echo -n "$4"
 }
 
