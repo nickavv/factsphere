@@ -4,7 +4,7 @@
    Summon Fact Sphere (from Portal 2) to reveal some [non-|partial-]truth.
            Inspired by cowsay, and also by the tenor of the times.
 
-		 Idea, code and graphics by Nicholas Ver Voort,
+               Idea, code and graphics by Nicholas Ver Voort,
                   with a trick or two by Patrick M. Jordan.
 
                                                                               "
@@ -20,8 +20,12 @@ QUOTE_LEADER_OFFSET=15
 #___! The Mechanism !_________________________________________________________
 
 get_fact() {
-    # Retreive a fact
-    egrep '^#\. ' $0 | sort -R | head -1 | sed 's/^...//'
+    # Retreive a random fact
+    egrep '^#\. ' $0 							\
+    | awk 'BEGIN { srand(); OFMT="%.5f" } { print rand(), $0 }'		\
+    | sort -k1,1n							\
+    | head -1								\
+    | cut -d' ' -f3-
 }
 
 build_repeating_string() {
